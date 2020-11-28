@@ -27,6 +27,11 @@ body {
     sans-serif;
   background-color: var(--color-gray-blue);
   font-size: 13px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 /* style base */
