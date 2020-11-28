@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: content-box;
+}
+
+:root {
+    --color-dark-cyan: hsl(185, 75%, 39%);
+    --color-dark-grayish-blue: hsl(227, 10%, 46%);
+    --color-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --color-dark-gray: hsl(0, 0%, 59%);
+}
+
+body {
+    font-family: 'Kumbh Sans',
+        sans-serif;
+    font-size: 18px;
+}
+
+h2,
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.container-card {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition-property: background-size, background-position;
+    transition-duration: 0.5s;
+    background-image: url('../images/bg-pattern-top.svg'), url('../images/bg-pattern-bottom.svg');
+
+    background-position: top -250px left -250px,
+        bottom -250px right -250px;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-color: var(--color-dark-cyan);
+}
+
+.card {
+    text-align: center;
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 350px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card__header {
+    background-color: white;
+    background-image: url('../images/bg-pattern-card.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 25%;
+}
+
+.card__avatar {
+    clip-path: circle();
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
+.card__name {
+    margin-top: 1rem;
+}
+
+.card__city {
+    font-size: 0.7em;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card__footer {
+    --padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card__metric-name {
+    font-size: 0.5em;
+    letter-spacing: 0.15em;
+}
+
+.card__metric-value,
+.card__name {
+    font-weight: 700;
+    color: var(--color-dark-desaturated-blue);
+    font-size: 1em;
+}
+
+.card__city,
+.card__metric-name,
+.card__name>span {
+    font-weight: 400;
+    color: var(--color-dark-grayish-blue);
+}
+
+@media (min-width:1200px) {
+    .container-card {
+        background-position:
+            top -600px left -300px,
+            bottom -600px right -300px;
+        background-size: 1000px;
+    }
+}
